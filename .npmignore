@@ -1,0 +1,10 @@
+src/
+public/
+index.html
+
+src/         
+*.ts            
+*.tsx            
+*.log             
+
+.gitignore
