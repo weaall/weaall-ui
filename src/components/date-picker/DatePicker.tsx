@@ -3,17 +3,42 @@ import dayjs from "dayjs";
 
 import * as tw from "./DatePicker.styles";
 
+
 interface DatePickerProps {
     startDate: string;
     endDate: string;
     onDateValueChange: (selectedDates: { startDate: string; endDate: string }) => void;
 }
 
+const RightIcon = () => (
+    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path 
+        d="M9 5L14.15 10C14.4237 10.2563 14.6419 10.5659 14.791 10.9099C14.9402 11.2539 15.0171 11.625 15.0171 12C15.0171 12.375 14.9402 12.7458 14.791 13.0898C14.6419 13.4339 14.4237 13.7437 14.15 14L9 19" 
+        stroke="#000000" 
+        strokeWidth="1.5" 
+        strokeLinecap="round" 
+        strokeLinejoin="round" 
+      />
+    </svg>
+  );
+  
+  const LeftIcon = () => (
+    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path 
+        d="M14.9991 19L9.83911 14C9.56672 13.7429 9.34974 13.433 9.20142 13.0891C9.0531 12.7452 8.97656 12.3745 8.97656 12C8.97656 11.6255 9.0531 11.2548 9.20142 10.9109C9.34974 10.567 9.56672 10.2571 9.83911 10L14.9991 5" 
+        stroke="#000000" 
+        strokeWidth="1.5" 
+        strokeLinecap="round" 
+        strokeLinejoin="round" 
+      />
+    </svg>
+  );
+
 export default function DatePicker({ startDate, endDate, onDateValueChange }: DatePickerProps) {
     const [date, setDate] = useState(dayjs());
     const [dateValue, setDateValue] = useState({
-        startDate: startDate,
-        endDate: endDate,
+        startDate: startDate || dayjs().format('YYYY-MM-DD'),
+        endDate: endDate || dayjs().add(1, 'day').format('YYYY-MM-DD'),
     });
 
     const selectDate = (selectedDate: string) => {
@@ -111,19 +136,19 @@ export default function DatePicker({ startDate, endDate, onDateValueChange }: Da
                 <tw.CalendarWrap>
                     <tw.CalTitleWrap>
                         <tw.YearWrap>
-                            <tw.NavBtn onClick={prevMonthClick}>
-                                <tw.NavSvg alt="" src={require("../../../assets/svg_black/left_icon.svg").default} />
+                        <tw.NavBtn onClick={prevMonthClick}>
+                                <LeftIcon />
                             </tw.NavBtn>
                             <tw.YearMonth>
-                                {viewYear}. {viewMonth + 1}
+                                {date.year()}. {date.month() + 1}
                             </tw.YearMonth>
                         </tw.YearWrap>
                         <tw.YearWrap>
                             <tw.YearMonth>
-                                {nextViewYear}. {nextViewMonth + 1}
+                                {date.add(1, "month").year()}. {date.add(1, "month").month() + 1}
                             </tw.YearMonth>
                             <tw.NavBtn onClick={nextMonthClick}>
-                                <tw.NavSvg alt="" src={require("../../../assets/svg_black/right_icon.svg").default} />
+                                <RightIcon />
                             </tw.NavBtn>
                         </tw.YearWrap>
                     </tw.CalTitleWrap>

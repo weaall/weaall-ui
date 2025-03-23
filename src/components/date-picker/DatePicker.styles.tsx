@@ -12,7 +12,7 @@ interface StartDateProps{
     $date: String
 }
 
-export const Container = tw.div`absolute w-full px-4 mt-2 mobile:pt-0`
+export const Container = tw.div`absolute w-full px-4 mt-2 mobile:pt-0 text-black`
 
 export const ModalWrap = tw.div`w-full flex rounded-xl h-auto bg-white shadow-md border p-4`
 

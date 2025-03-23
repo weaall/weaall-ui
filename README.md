@@ -11,6 +11,7 @@ npm install weaall-ui
 ```
 ## Usage
 
+```typescript
 import React, { useState } from 'react';
 import DatePicker from 'weaall-ui';
 
@@ -33,6 +34,7 @@ const MyComponent = () => {
 };
 
 export default MyComponent;
+```
 
 ## Key Features
 
@@ -40,7 +42,6 @@ export default MyComponent;
 - Styling: Based on Tailwind CSS, making it easy to customize.
 - TypeScript Support: Full TypeScript type definitions are included.
 
-## Key Features
 
 | Prop               | Type                                                      | Description                                       |
 |--------------------|-----------------------------------------------------------|---------------------------------------------------|
