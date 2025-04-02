@@ -1,6 +1,4 @@
-'use strict';
-
-var require$$0 = require('react');
+import require$$0 from 'react';
 
 var jsxRuntime = {exports: {}};
 
@@ -433,5 +431,5 @@ function Button({ children }) {
     return (jsxRuntimeExports.jsx("button", { className: "px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600", children: children }));
 }
 
-exports.Button = Button;
-//# sourceMappingURL=index.js.map
+export { Button };
+//# sourceMappingURL=index.mjs.map
