@@ -113,7 +113,7 @@ export const dateWrap = styleVariants({
         borderTopLeftRadius: "0.75rem",
         borderBottomLeftRadius: "0.75rem",
         cursor: "pointer",
-        ":hover": { backgroundColor: "#F9FAFB" },
+        ":hover": { backgroundColor: "#F3F4F6" },
     },
     endDate: {
         height: "2.5rem",
@@ -127,7 +127,7 @@ export const dateWrap = styleVariants({
         borderTopRightRadius: "0.75rem",
         borderBottomRightRadius: "0.75rem",
         cursor: "pointer",
-        ":hover": { backgroundColor: "#F9FAFB" },
+        ":hover": { backgroundColor: "#F3F4F6" },
     },
     betweenDate: {
         height: "2.5rem",
@@ -139,7 +139,7 @@ export const dateWrap = styleVariants({
         justifyContent: "center",
         backgroundColor: "rgba(255, 149, 0, 0.13)",
         cursor: "pointer",
-        ":hover": { backgroundColor: "#F9FAFB" },
+        ":hover": { backgroundColor: "#F3F4F6" },
     },
     today: {
         height: "2.5rem",
@@ -151,7 +151,8 @@ export const dateWrap = styleVariants({
         justifyContent: "center",
         backgroundColor: "#FF9500",
         cursor: "pointer",
-        ":hover": { backgroundColor: "#F9FAFB" },
+        borderRadius: "0.5rem",
+        ":hover": { backgroundColor: "#F3F4F6" },
     },
     other: {
         margin: "0.1px",
@@ -164,7 +165,7 @@ export const dateWrap = styleVariants({
         justifyContent: "center",
         cursor: "pointer",
         borderRadius: "0.5rem",
-        ":hover": { backgroundColor: "#F9FAFB" },
+        ":hover": { backgroundColor: "#F3F4F6" },
     },
 });
 

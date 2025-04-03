@@ -1,6 +1,6 @@
 import require$$0, { useState } from 'react';
 import './assets/src/components/Button/Button.css.ts.vanilla-D2hYQCRM.css';
-import './assets/src/components/CalendarPicker/CalendarPicker.css.ts.vanilla-CYxmzwph.css';
+import './assets/src/components/CalendarPicker/CalendarPicker.css.ts.vanilla--e6GEFFY.css';
 
 function getDefaultExportFromCjs (x) {
 	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
@@ -516,12 +516,12 @@ var yearWrap = 'CalendarPicker_yearWrap__1uzbqtp4';
 var RightIcon = function () { return (jsxRuntimeExports.jsx("svg", { width: "24px", height: "24px", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg", children: jsxRuntimeExports.jsx("path", { d: "M9 5L14.15 10C14.4237 10.2563 14.6419 10.5659 14.791 10.9099C14.9402 11.2539 15.0171 11.625 15.0171 12C15.0171 12.375 14.9402 12.7458 14.791 13.0898C14.6419 13.4339 14.4237 13.7437 14.15 14L9 19", stroke: "#000000", strokeWidth: "1.5", strokeLinecap: "round", strokeLinejoin: "round" }) })); };
 var LeftIcon = function () { return (jsxRuntimeExports.jsx("svg", { width: "24px", height: "24px", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg", children: jsxRuntimeExports.jsx("path", { d: "M14.9991 19L9.83911 14C9.56672 13.7429 9.34974 13.433 9.20142 13.0891C9.0531 12.7452 8.97656 12.3745 8.97656 12C8.97656 11.6255 9.0531 11.2548 9.20142 10.9109C9.34974 10.567 9.56672 10.2571 9.83911 10L14.9991 5", stroke: "#000000", strokeWidth: "1.5", strokeLinecap: "round", strokeLinejoin: "round" }) })); };
 function CalendarPicker(_a) {
-    var startDate = _a.startDate, endDate = _a.endDate, onDateValueChange = _a.onDateValueChange, _b = _a.lang, lang = _b === void 0 ? "en" : _b, _c = _a.maxMonth, maxMonth = _c === void 0 ? 3 : _c;
-    var _d = useState(dayjs()), date = _d[0], setDate = _d[1];
-    var _e = useState({
+    var startDate = _a.startDate, endDate = _a.endDate, onDateValueChange = _a.onDateValueChange, _b = _a.lang, lang = _b === void 0 ? "en" : _b, _c = _a.maxMonth, maxMonth = _c === void 0 ? 3 : _c, _d = _a.maxDate, maxDate = _d === void 0 ? 1 : _d;
+    var _e = useState(dayjs()), date = _e[0], setDate = _e[1];
+    var _f = useState({
         startDate: startDate || dayjs().format("YYYY-MM-DD"),
         endDate: endDate || dayjs().add(1, "day").format("YYYY-MM-DD"),
-    }), dateValue = _e[0], setDateValue = _e[1];
+    }), dateValue = _f[0], setDateValue = _f[1];
     var selectDate = function (selectedDate) {
         var isBothDatesSet = dateValue.startDate !== "" && dateValue.endDate !== "";
         if (isBothDatesSet) {
@@ -531,7 +531,7 @@ function CalendarPicker(_a) {
         else {
             var isAfterStartDate = dayjs(selectedDate).isAfter(dateValue.startDate, "day");
             var dateDiff = dayjs(selectedDate).diff(dayjs(dateValue.startDate), "day");
-            if (isAfterStartDate && dateDiff <= 8) {
+            if (isAfterStartDate && dateDiff <= safeMaxDate) {
                 var newDateValue = __assign(__assign({}, dateValue), { endDate: selectedDate });
                 setDateValue(newDateValue);
                 if (newDateValue.endDate) {
@@ -589,6 +589,7 @@ function CalendarPicker(_a) {
         }
     };
     var safeMaxMonth = Math.max(2, maxMonth !== null && maxMonth !== void 0 ? maxMonth : 2);
+    var safeMaxDate = Math.max(1, maxDate !== null && maxDate !== void 0 ? maxDate : 1);
     var nextMonthClick = function () {
         var nextThreeMonths = dayjs().add(safeMaxMonth - 1, "month");
         if (date.isBefore(nextThreeMonths, "month")) {
@@ -624,7 +625,7 @@ function CalendarPicker(_a) {
                                                     return dateWrap.today;
                                                 return dateWrap.other;
                                             };
-                                            var isDisabled = dateValue.startDate && dayjs(formattedDate).diff(dayjs(dateValue.startDate), "day") > 8;
+                                            var isDisabled = dateValue.startDate && dayjs(formattedDate).diff(dayjs(dateValue.startDate), "day") > safeMaxDate;
                                             if (condition === "other") {
                                                 return (jsxRuntimeExports.jsx("div", { className: dateWrap.other, children: jsxRuntimeExports.jsx("p", { className: dateLabel.other, children: date }) }, i));
                                             }
@@ -659,7 +660,7 @@ function CalendarPicker(_a) {
                                                     return dateWrap.today;
                                                 return dateWrap.other;
                                             };
-                                            var isDisabled = dateValue.startDate && dayjs(formattedDate).diff(dayjs(dateValue.startDate), "day") > 8;
+                                            var isDisabled = dateValue.startDate && dayjs(formattedDate).diff(dayjs(dateValue.startDate), "day") > safeMaxDate;
                                             if (condition === "other") {
                                                 return (jsxRuntimeExports.jsx("div", { className: dateWrap.other, children: jsxRuntimeExports.jsx("p", { className: dateLabel.other, children: date }) }, i));
                                             }

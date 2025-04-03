@@ -10,6 +10,7 @@ interface CalendarPickerProps {
 
     lang? : "en" | "en-long" | "ko";
     maxMonth? : number;
+    maxDate? : number;
 }
 
 const RightIcon = () => (
@@ -36,7 +37,7 @@ const LeftIcon = () => (
     </svg>
 );
 
-export default function CalendarPicker({ startDate, endDate, onDateValueChange, lang = "en", maxMonth = 3}: CalendarPickerProps) {
+export default function CalendarPicker({ startDate, endDate, onDateValueChange, lang = "en", maxMonth = 3, maxDate = 1}: CalendarPickerProps) {
     const [date, setDate] = useState(dayjs());
     const [dateValue, setDateValue] = useState({
         startDate: startDate || dayjs().format("YYYY-MM-DD"),
@@ -53,7 +54,7 @@ export default function CalendarPicker({ startDate, endDate, onDateValueChange, 
             const isAfterStartDate = dayjs(selectedDate).isAfter(dateValue.startDate, "day");
             const dateDiff = dayjs(selectedDate).diff(dayjs(dateValue.startDate), "day");
 
-            if (isAfterStartDate && dateDiff <= 8) {
+            if (isAfterStartDate && dateDiff <= safeMaxDate) {
                 const newDateValue = { ...dateValue, endDate: selectedDate };
                 setDateValue(newDateValue);
 
@@ -126,6 +127,7 @@ export default function CalendarPicker({ startDate, endDate, onDateValueChange, 
     };
 
     const safeMaxMonth = Math.max(2, maxMonth ?? 2);
+    const safeMaxDate = Math.max(1, maxDate ?? 1);
 
     const nextMonthClick = () => {
         const nextThreeMonths = dayjs().add(safeMaxMonth - 1, "month");
@@ -201,7 +203,7 @@ export default function CalendarPicker({ startDate, endDate, onDateValueChange, 
                                         return styles.dateWrap.other;
                                     };
 
-                                    const isDisabled = dateValue.startDate && dayjs(formattedDate).diff(dayjs(dateValue.startDate), "day") > 8;
+                                    const isDisabled = dateValue.startDate && dayjs(formattedDate).diff(dayjs(dateValue.startDate), "day") > safeMaxDate;
 
                                     if (condition === "other") {
                                         return (
@@ -266,7 +268,7 @@ export default function CalendarPicker({ startDate, endDate, onDateValueChange, 
                                         return styles.dateWrap.other;
                                     };
 
-                                    const isDisabled = dateValue.startDate && dayjs(formattedDate).diff(dayjs(dateValue.startDate), "day") > 8;
+                                    const isDisabled = dateValue.startDate && dayjs(formattedDate).diff(dayjs(dateValue.startDate), "day") > safeMaxDate;
 
                                     if (condition === "other") {
                                         return (
