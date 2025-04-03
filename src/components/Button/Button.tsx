@@ -1,13 +1,35 @@
 import React from "react";
+import { baseButton, variantStyles, sizeStyles, colorStyles, disabledStyle } from "./Button.css";
 
 interface ButtonProps {
-  children: React.ReactNode;
+    children: React.ReactNode;
+    onClick?: () => void;
+    variant?: "contained" | "outlined" | "text";
+    size?: "small" | "medium" | "large";
+    color?: "primary" | "secondary" | "default";
+    className?: string;
+    style?: React.CSSProperties;
+    disabled?: boolean;
 }
 
-export default function Button({ children }: ButtonProps) {
-  return (
-    <button className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
-      {children}
-    </button>
-  );
+export default function Button({
+    children,
+    onClick,
+    variant = "contained",
+    size = "medium",
+    color = "default",
+    className = "",
+    style,
+    disabled = false,
+}: ButtonProps) {
+    return (
+        <button
+            className={`${baseButton} ${variantStyles[variant]} ${sizeStyles[size]} ${colorStyles[color]} ${disabled ? disabledStyle : ""} ${className}`}
+            onClick={disabled ? undefined : onClick}
+            style={style}
+            disabled={disabled}
+        >
+            {children}
+        </button>
+    );
 }

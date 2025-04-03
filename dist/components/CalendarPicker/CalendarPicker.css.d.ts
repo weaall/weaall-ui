@@ -1,0 +1,17 @@
+export declare const container: string;
+export declare const modalWrap: string;
+export declare const calendarWrap: string;
+export declare const calTitleWrap: string;
+export declare const yearWrap: string;
+export declare const yearMonth: string;
+export declare const navBtn: string;
+export declare const daysWrap: string;
+export declare const dayWrap: string;
+export declare const dayLabelBase: string;
+export declare const dayLabelVariants: Record<"sunday" | "saturday", string>;
+export declare const datesWrap: string;
+export declare const dateWrap: Record<"startDate" | "endDate" | "betweenDate" | "today" | "other", string>;
+export declare const pastWrap: string;
+export declare const dateLabel: Record<"today" | "other" | "this", string>;
+export declare const pickWrap: string;
+export declare const monthWrap: string;

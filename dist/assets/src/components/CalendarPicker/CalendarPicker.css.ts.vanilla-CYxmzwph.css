@@ -1,0 +1,191 @@
+.CalendarPicker_container__1uzbqtp0 {
+  position: absolute;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: 0.5rem;
+  color: #000000;
+}
+.CalendarPicker_modalWrap__1uzbqtp1 {
+  width: 100%;
+  display: flex;
+  border-radius: 0.75rem;
+  height: auto;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+}
+.CalendarPicker_calendarWrap__1uzbqtp2 {
+  height: 80%;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.CalendarPicker_calTitleWrap__1uzbqtp3 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+.CalendarPicker_yearWrap__1uzbqtp4 {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.CalendarPicker_yearMonth__1uzbqtp5 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.CalendarPicker_navBtn__1uzbqtp6 {
+  padding: 0.25rem;
+  border-radius: 9999px;
+}
+.CalendarPicker_navBtn__1uzbqtp6:hover {
+  background-color: #f9fafb;
+}
+.CalendarPicker_daysWrap__1uzbqtp7 {
+  height: 1rem;
+  display: flex;
+  justify-content: center;
+}
+.CalendarPicker_dayWrap__1uzbqtp8 {
+  width: 14%;
+  text-align: center;
+}
+.CalendarPicker_dayLabelBase__1uzbqtp9 {
+  font-weight: 600;
+}
+.CalendarPicker_dayLabelVariants_sunday__1uzbqtpa {
+  color: #ef4444;
+}
+.CalendarPicker_dayLabelVariants_saturday__1uzbqtpb {
+  color: #3b82f6;
+}
+.CalendarPicker_datesWrap__1uzbqtpc {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.CalendarPicker_dateWrap_startDate__1uzbqtpd {
+  height: 2.5rem;
+  width: 14%;
+  padding: 0.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(255, 149, 0, 0.25);
+  border-top-left-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
+  cursor: pointer;
+}
+.CalendarPicker_dateWrap_startDate__1uzbqtpd:hover {
+  background-color: #F9FAFB;
+}
+.CalendarPicker_dateWrap_endDate__1uzbqtpe {
+  height: 2.5rem;
+  width: 14%;
+  padding: 0.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(255, 149, 0, 0.25);
+  border-top-right-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+  cursor: pointer;
+}
+.CalendarPicker_dateWrap_endDate__1uzbqtpe:hover {
+  background-color: #F9FAFB;
+}
+.CalendarPicker_dateWrap_betweenDate__1uzbqtpf {
+  height: 2.5rem;
+  width: 14%;
+  padding: 0.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(255, 149, 0, 0.13);
+  cursor: pointer;
+}
+.CalendarPicker_dateWrap_betweenDate__1uzbqtpf:hover {
+  background-color: #F9FAFB;
+}
+.CalendarPicker_dateWrap_today__1uzbqtpg {
+  height: 2.5rem;
+  width: 14%;
+  padding: 0.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #FF9500;
+  cursor: pointer;
+}
+.CalendarPicker_dateWrap_today__1uzbqtpg:hover {
+  background-color: #F9FAFB;
+}
+.CalendarPicker_dateWrap_other__1uzbqtph {
+  margin: 0.1px;
+  height: 2.5rem;
+  width: 14%;
+  padding: 0.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+.CalendarPicker_dateWrap_other__1uzbqtph:hover {
+  background-color: #F9FAFB;
+}
+.CalendarPicker_pastWrap__1uzbqtpi {
+  height: 2.5rem;
+  width: 14%;
+  padding: 0.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0.5rem;
+  color: #d1d5db;
+  cursor: default;
+}
+.CalendarPicker_dateLabel_today__1uzbqtpj {
+  color: #FF9500;
+  font-weight: 700;
+  border-radius: 0.5rem;
+}
+.CalendarPicker_dateLabel_other__1uzbqtpk {
+  display: none;
+}
+.CalendarPicker_pickWrap__1uzbqtpm {
+  display: flex;
+  font-size: 0.875rem;
+  gap: 2rem;
+}
+.CalendarPicker_monthWrap__1uzbqtpn {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+@media screen and (max-width: 768px) {
+  .CalendarPicker_container__1uzbqtp0 {
+    padding-top: 0;
+  }
+  .CalendarPicker_calendarWrap__1uzbqtp2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .CalendarPicker_yearMonth__1uzbqtp5 {
+    font-size: 1rem;
+  }
+}

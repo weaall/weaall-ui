@@ -11,29 +11,15 @@ npm install weaall-ui
 ```
 ## Usage
 
-```typescript
-import React, { useState } from 'react';
-import DatePicker from 'weaall-ui';
-
-const MyComponent = () => {
-  const [selectedDates, setSelectedDates] = useState({ startDate: '', endDate: '' });
-
-  const handleDateChange = (dates: { startDate: string; endDate: string }) => {
-    setSelectedDates(dates);
-  };
-
-  return (
-    <div>
-      <DatePicker
-        startDate={selectedDates.startDate}
-        endDate={selectedDates.endDate}
-        onDateValueChange={handleDateChange}
-      />
-    </div>
-  );
+```js
+module.exports = {
+    theme: {
+        colors: {
+            primary: "#ff0000",
+            hoverPrimary: "#cc0000",
+        },
+    },
 };
-
-export default MyComponent;
 ```
 
 ## Key Features
