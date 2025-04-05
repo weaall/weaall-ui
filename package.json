@@ -1,6 +1,6 @@
 {
     "name": "weaall-ui",
-    "version": "1.0.01",
+    "version": "1.0.12",
     "main": "dist/index.js",
     "module": "dist/index.mjs",
     "types": "dist/index.d.ts",

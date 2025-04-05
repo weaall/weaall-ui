@@ -1,5 +1,5 @@
 import React from "react";
-import { baseButton, variantStyles, sizeStyles, colorStyles, disabledStyle } from "./Button.css";
+import { baseButton, variantStyles, sizeStyles, colorStyles, disabledStyles } from "./Button.css";
 
 interface ButtonProps {
     children: React.ReactNode;
@@ -16,7 +16,7 @@ export default function Button({
     children,
     onClick,
     variant = "contained",
-    size = "medium",
+    size = "small",
     color = "default",
     className = "",
     style,
@@ -24,7 +24,7 @@ export default function Button({
 }: ButtonProps) {
     return (
         <button
-            className={`${baseButton} ${variantStyles[variant]} ${sizeStyles[size]} ${colorStyles[color]} ${disabled ? disabledStyle : ""} ${className}`}
+            className={`${baseButton} ${variantStyles[variant]} ${sizeStyles[size]} ${colorStyles[color]} ${disabled ? disabledStyles[variant] : ""} ${className}`}
             onClick={disabled ? undefined : onClick}
             style={style}
             disabled={disabled}

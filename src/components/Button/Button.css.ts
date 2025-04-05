@@ -5,6 +5,10 @@ export const baseButton = style({
     borderRadius: "4px",
     cursor: "pointer",
     fontFamily: "inherit",
+    display: "flex",           
+    justifyContent: "center",  
+    alignItems: "center",
+    fontWeight: "500"
 });
 
 export const variantStyles = styleVariants({
@@ -25,10 +29,27 @@ export const colorStyles = styleVariants({
     default: {},
 });
 
-export const disabledStyle = style({
-    opacity: 0.6,
-    cursor: "not-allowed",
-    pointerEvents: "none",
-    backgroundColor: "#5a6268",
-    color: "white",
+export const disabledStyles = styleVariants({
+    contained: { 
+        opacity: 0.6, 
+        cursor: "not-allowed", 
+        pointerEvents: "none", 
+        backgroundColor: "#5a6268",
+        color: "white" 
+    },
+    outlined: { 
+        opacity: 0.5, 
+        cursor: "not-allowed", 
+        pointerEvents: "none", 
+        border: "1px solid #999999", 
+        backgroundColor: "transparent", 
+        color: "#999999" 
+    },
+    text: { 
+        opacity: 0.4, 
+        cursor: "not-allowed", 
+        pointerEvents: "none", 
+        backgroundColor: "transparent", 
+        color: "#666666"
+    },
 });
