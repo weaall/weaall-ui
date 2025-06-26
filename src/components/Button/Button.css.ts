@@ -18,9 +18,9 @@ export const variantStyles = styleVariants({
 });
 
 export const sizeStyles = styleVariants({
-    small: { padding: "4px 8px", fontSize: "12px" },
-    medium: { padding: "8px 16px", fontSize: "16px" },
-    large: { padding: "12px 24px", fontSize: "20px" },
+    small: { padding: "4px 8px", fontSize: "10px" },
+    medium: { padding: "8px 16px", fontSize: "14px" },
+    large: { padding: "12px 24px", fontSize: "18px" },
 });
 
 export const colorStyles = styleVariants({

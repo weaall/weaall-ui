@@ -16,7 +16,7 @@ export default function Button({
     children,
     onClick,
     variant = "contained",
-    size = "small",
+    size = "medium",
     color = "default",
     className = "",
     style,
@@ -24,7 +24,9 @@ export default function Button({
 }: ButtonProps) {
     return (
         <button
-            className={`${baseButton} ${variantStyles[variant]} ${sizeStyles[size]} ${colorStyles[color]} ${disabled ? disabledStyles[variant] : ""} ${className}`}
+            className={`${baseButton} ${variantStyles[variant]} ${sizeStyles[size]} ${colorStyles[color]} ${
+                disabled ? disabledStyles[variant] : ""
+            } ${className}`}
             onClick={disabled ? undefined : onClick}
             style={style}
             disabled={disabled}
