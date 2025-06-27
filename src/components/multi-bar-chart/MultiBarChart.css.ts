@@ -1,5 +1,5 @@
-// src/components/TableStatisticList.css.ts
 import { style, styleVariants } from "@vanilla-extract/css";
+import { barColorHex, barColorHoverHex } from "./colors";
 
 export const content = style({
     display: "flex",
@@ -42,7 +42,7 @@ export const chartContent = style({
     display: "flex",
     flexDirection: "column",
     width: "100%",
-    marginTop: "37px",
+    marginTop: "33px",
     height: "calc(100% - 35px)",
 });
 
@@ -82,16 +82,16 @@ export const barLabel = style({
 });
 
 export const barColorVariants = styleVariants({
-    color1: { backgroundColor: "#f43f5e" },
-    color2: { backgroundColor: "#38bdf8" },
-    color3: { backgroundColor: "#34d399" },
-    color4: { backgroundColor: "#a78bfa" },
-    color5: { backgroundColor: "#facc15" },
-    color6: { backgroundColor: "#fb923c" },
-    color7: { backgroundColor: "#818cf8" },
-    color8: { backgroundColor: "#f472b6" },
-    color9: { backgroundColor: "#4ade80" },
-    color10: { backgroundColor: "#f87171" },
+    color1: { backgroundColor: barColorHex.color1, selectors: { '&:hover': { backgroundColor: barColorHoverHex.color1 } } },
+    color2: { backgroundColor: barColorHex.color2, selectors: { '&:hover': { backgroundColor: barColorHoverHex.color2 } } },
+    color3: { backgroundColor: barColorHex.color3, selectors: { '&:hover': { backgroundColor: barColorHoverHex.color3 } } },
+    color4: { backgroundColor: barColorHex.color4, selectors: { '&:hover': { backgroundColor: barColorHoverHex.color4 } } },
+    color5: { backgroundColor: barColorHex.color5, selectors: { '&:hover': { backgroundColor: barColorHoverHex.color5 } } },
+    color6: { backgroundColor: barColorHex.color6, selectors: { '&:hover': { backgroundColor: barColorHoverHex.color6 } } },
+    color7: { backgroundColor: barColorHex.color7, selectors: { '&:hover': { backgroundColor: barColorHoverHex.color7 } } },
+    color8: { backgroundColor: barColorHex.color8, selectors: { '&:hover': { backgroundColor: barColorHoverHex.color8 } } },
+    color9: { backgroundColor: barColorHex.color9, selectors: { '&:hover': { backgroundColor: barColorHoverHex.color9 } } },
+    color10: { backgroundColor: barColorHex.color10, selectors: { '&:hover': { backgroundColor: barColorHoverHex.color10 } } },
 });
 
 export const bottomAxis = style({

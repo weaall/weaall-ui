@@ -1,6 +1,40 @@
-import require$$0 from 'react';
-import './assets/src/components/Button/Button.css.ts.vanilla-BrpHCVhR.css';
-import './assets/src/components/chart/Chart.css.ts.vanilla-BsG0RLqY.css';
+import require$$0, { useState, useRef, useEffect } from 'react';
+import { createPortal } from 'react-dom';
+import './assets/src/components/bar-chart/BarChart.css.ts.vanilla-Bti4jkdK.css';
+import './assets/src/components/multi-bar-chart/MultiBarChart.css.ts.vanilla-D2lHce_R.css';
+import './assets/src/components/single-line-chart/SingleLineChart.css.ts.vanilla-HJfAGGt5.css';
+
+/******************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+/* global Reflect, Promise, SuppressedError, Symbol, Iterator */
+
+
+function __spreadArray(to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+}
+
+typeof SuppressedError === "function" ? SuppressedError : function (error, suppressed, message) {
+    var e = new Error(message);
+    return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
+};
 
 var jsxRuntime = {exports: {}};
 
@@ -1365,66 +1399,52 @@ function requireJsxRuntime () {
 
 var jsxRuntimeExports = requireJsxRuntime();
 
-var baseButton = 'Button_baseButton__r44qq10';
-var colorStyles = {primary:'Button_colorStyles_primary__r44qq17',secondary:'Button_colorStyles_secondary__r44qq18','default':'Button_colorStyles_default__r44qq19'};
-var disabledStyles = {contained:'Button_disabledStyles_contained__r44qq1a',outlined:'Button_disabledStyles_outlined__r44qq1b',text:'Button_disabledStyles_text__r44qq1c'};
-var sizeStyles = {small:'Button_sizeStyles_small__r44qq14',medium:'Button_sizeStyles_medium__r44qq15',large:'Button_sizeStyles_large__r44qq16'};
-var variantStyles = {contained:'Button_variantStyles_contained__r44qq11',outlined:'Button_variantStyles_outlined__r44qq12',text:'Button_variantStyles_text__r44qq13'};
+var barColorVariants$1 = {color1:'BarChart_barColorVariants_color1__q3fmm09',color2:'BarChart_barColorVariants_color2__q3fmm0a',color3:'BarChart_barColorVariants_color3__q3fmm0b',color4:'BarChart_barColorVariants_color4__q3fmm0c',color5:'BarChart_barColorVariants_color5__q3fmm0d',color6:'BarChart_barColorVariants_color6__q3fmm0e',color7:'BarChart_barColorVariants_color7__q3fmm0f',color8:'BarChart_barColorVariants_color8__q3fmm0g',color9:'BarChart_barColorVariants_color9__q3fmm0h',color10:'BarChart_barColorVariants_color10__q3fmm0i'};
+var barContainer$1 = 'BarChart_barContainer__q3fmm07';
+var barLabel$1 = 'BarChart_barLabel__q3fmm08';
+var barLabelItem$2 = 'BarChart_barLabelItem__q3fmm0l';
+var barLabels$2 = 'BarChart_barLabels__q3fmm0k';
+var bottomAxis$2 = 'BarChart_bottomAxis__q3fmm0j';
+var chartBars$2 = 'BarChart_chartBars__q3fmm05';
+var chartContainer$2 = 'BarChart_chartContainer__q3fmm01';
+var chartContent$2 = 'BarChart_chartContent__q3fmm04';
+var chartNote$2 = 'BarChart_chartNote__q3fmm0m';
+var content$2 = 'BarChart_content__q3fmm00';
+var gridLine$2 = 'BarChart_gridLine__q3fmm06';
+var yAxis$2 = 'BarChart_yAxis__q3fmm02';
+var yAxisTick$2 = 'BarChart_yAxisTick__q3fmm03';
 
-function Button(_a) {
-    var children = _a.children, onClick = _a.onClick, _b = _a.variant, variant = _b === void 0 ? "contained" : _b, _c = _a.size, size = _c === void 0 ? "medium" : _c, _d = _a.color, color = _d === void 0 ? "default" : _d, _e = _a.className, className = _e === void 0 ? "" : _e, style = _a.style, _f = _a.disabled, disabled = _f === void 0 ? false : _f;
-    return (jsxRuntimeExports.jsx("button", { className: "".concat(baseButton, " ").concat(variantStyles[variant], " ").concat(sizeStyles[size], " ").concat(colorStyles[color], " ").concat(disabled ? disabledStyles[variant] : "", " ").concat(className), onClick: disabled ? undefined : onClick, style: style, disabled: disabled, children: children }));
-}
-
-/******************************************************************************
-Copyright (c) Microsoft Corporation.
-
-Permission to use, copy, modify, and/or distribute this software for any
-purpose with or without fee is hereby granted.
-
-THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
-REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
-INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-PERFORMANCE OF THIS SOFTWARE.
-***************************************************************************** */
-/* global Reflect, Promise, SuppressedError, Symbol, Iterator */
-
-
-function __spreadArray(to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
-}
-
-typeof SuppressedError === "function" ? SuppressedError : function (error, suppressed, message) {
-    var e = new Error(message);
-    return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
+var barColorHex$1 = {
+    color1: "#f43f5e",
+    color2: "#38bdf8",
+    color3: "#34d399",
+    color4: "#a78bfa",
+    color5: "#facc15",
+    color6: "#fb923c",
+    color7: "#818cf8",
+    color8: "#f472b6",
+    color9: "#4ade80",
+    color10: "#f87171",
 };
 
-var barColorVariants = {color1:'Chart_barColorVariants_color1__91vur59',color2:'Chart_barColorVariants_color2__91vur5a',color3:'Chart_barColorVariants_color3__91vur5b',color4:'Chart_barColorVariants_color4__91vur5c',color5:'Chart_barColorVariants_color5__91vur5d',color6:'Chart_barColorVariants_color6__91vur5e',color7:'Chart_barColorVariants_color7__91vur5f',color8:'Chart_barColorVariants_color8__91vur5g',color9:'Chart_barColorVariants_color9__91vur5h',color10:'Chart_barColorVariants_color10__91vur5i'};
-var barContainer = 'Chart_barContainer__91vur57';
-var barLabel = 'Chart_barLabel__91vur58';
-var barLabelItem = 'Chart_barLabelItem__91vur5l';
-var barLabels = 'Chart_barLabels__91vur5k';
-var bottomAxis = 'Chart_bottomAxis__91vur5j';
-var chartBars = 'Chart_chartBars__91vur55';
-var chartContainer = 'Chart_chartContainer__91vur51';
-var chartContent = 'Chart_chartContent__91vur54';
-var chartNote = 'Chart_chartNote__91vur5m';
-var content = 'Chart_content__91vur50';
-var gridLine = 'Chart_gridLine__91vur56';
-var yAxis = 'Chart_yAxis__91vur52';
-var yAxisTick = 'Chart_yAxisTick__91vur53';
-
-function Chart(_a) {
-    var figures = _a.figures, labels = _a.labels, _b = _a.height, height = _b === void 0 ? 300 : _b;
+var colorKeys$1 = [
+    "color1",
+    "color2",
+    "color3",
+    "color4",
+    "color5",
+    "color6",
+    "color7",
+    "color8",
+    "color9",
+    "color10",
+];
+function BarChart(_a) {
+    var date = _a.date, _b = _a.height, height = _b === void 0 ? 300 : _b, hover = _a.hover, unit = _a.unit;
+    var _c = useState(null), hoveredIdx = _c[0], setHoveredIdx = _c[1];
+    var _d = useState(null), mousePos = _d[0], setMousePos = _d[1];
+    var figures = date.map(function (d) { return d.figures; });
+    var labels = date.map(function (d) { return d.title; });
     var bottomFixedHeight = 100;
     var totalChartContainerHeight = height;
     var chartBarsAndAxisHeight = totalChartContainerHeight - bottomFixedHeight;
@@ -1434,21 +1454,455 @@ function Chart(_a) {
         var value = (maxBarValue / (numberOfTicks - 1)) * (numberOfTicks - 1 - i);
         return Math.round(value);
     });
-    var colorKeys = ["color1", "color2", "color3", "color4", "color5", "color6", "color7", "color8", "color9", "color10"];
-    return (jsxRuntimeExports.jsxs("div", { className: content, style: { height: height }, children: [jsxRuntimeExports.jsxs("div", { className: chartContainer, children: [jsxRuntimeExports.jsx("div", { className: yAxis, children: yAxisTicks.map(function (tick, index) { return (jsxRuntimeExports.jsx("div", { className: yAxisTick, children: jsxRuntimeExports.jsx("span", { children: tick }) }, index)); }) }), jsxRuntimeExports.jsxs("div", { className: chartContent, children: [jsxRuntimeExports.jsxs("div", { className: chartBars, children: [yAxisTicks.map(function (tick, index) { return (jsxRuntimeExports.jsx("div", { className: gridLine, style: {
+    return (jsxRuntimeExports.jsxs("div", { className: content$2, style: { height: height }, children: [jsxRuntimeExports.jsxs("div", { className: chartContainer$2, children: [jsxRuntimeExports.jsx("div", { className: yAxis$2, children: yAxisTicks.map(function (tick, index) { return (jsxRuntimeExports.jsx("div", { className: yAxisTick$2, children: jsxRuntimeExports.jsx("span", { children: tick }) }, index)); }) }), jsxRuntimeExports.jsxs("div", { className: chartContent$2, children: [jsxRuntimeExports.jsxs("div", { className: chartBars$2, children: [yAxisTicks.map(function (tick, index) { return (jsxRuntimeExports.jsx("div", { className: gridLine$2, style: {
                                             bottom: "".concat((index / (yAxisTicks.length - 1)) * 100, "%"),
-                                        } }, "grid-line-".concat(index))); }), figures.map(function (value, index) {
-                                        var _a;
-                                        return (jsxRuntimeExports.jsxs("div", { className: barContainer, children: [jsxRuntimeExports.jsx("span", { className: barLabel, children: value }), jsxRuntimeExports.jsx("div", { className: barColorVariants[colorKeys[index % colorKeys.length]], style: {
-                                                        height: "".concat((value / maxBarValue) * (chartBarsAndAxisHeight), "px"),
-                                                        width: "calc(100% / ".concat(figures.length, " - 16px)"),
-                                                        minWidth: "40px",
-                                                        borderRadius: "10px",
-                                                        transition: "all 0.5s ease-out",
-                                                        margin: "0 8px",
-                                                    }, title: "".concat((_a = labels === null || labels === void 0 ? void 0 : labels[index]) !== null && _a !== void 0 ? _a : index, ": ").concat(value) })] }, index));
-                                    }), jsxRuntimeExports.jsx("div", { className: bottomAxis })] }), jsxRuntimeExports.jsx("div", { className: barLabels, children: (labels !== null && labels !== void 0 ? labels : figures.map(function (_, i) { return "#".concat(i + 1); })).map(function (label, i) { return (jsxRuntimeExports.jsx("span", { className: barLabelItem, children: label }, i)); }) })] })] }), jsxRuntimeExports.jsx("div", { className: chartNote, children: "\uAC12\uC740 \uCD5C\uB300\uAC12\uC5D0 \uBE44\uB840\uD558\uC5EC \uD45C\uC2DC\uB429\uB2C8\uB2E4." })] }));
+                                        } }, "grid-line-".concat(index))); }), figures.map(function (value, index) { return (jsxRuntimeExports.jsxs("div", { className: barContainer$1, style: { position: "relative" }, onMouseEnter: function (e) {
+                                            setHoveredIdx(index);
+                                            setMousePos({ x: e.clientX, y: e.clientY });
+                                        }, onMouseMove: function (e) { return setMousePos({ x: e.clientX, y: e.clientY }); }, onMouseLeave: function () {
+                                            setHoveredIdx(null);
+                                            setMousePos(null);
+                                        }, children: [jsxRuntimeExports.jsx("span", { className: barLabel$1, children: hover ? "" : value }), jsxRuntimeExports.jsx("div", { className: barColorVariants$1[colorKeys$1[index % colorKeys$1.length]], style: {
+                                                    height: "".concat((value / maxBarValue) * chartBarsAndAxisHeight, "px"),
+                                                    width: "calc(100% / ".concat(figures.length, " - 16px)"),
+                                                    minWidth: "40px",
+                                                    borderRadius: "10px",
+                                                    transition: "all 0.2s ease-out",
+                                                    margin: "0 8px",
+                                                } }), hoveredIdx === index &&
+                                                hover &&
+                                                mousePos &&
+                                                createPortal(jsxRuntimeExports.jsxs("div", { style: {
+                                                        position: "fixed",
+                                                        top: mousePos.y + 12,
+                                                        left: mousePos.x + 12,
+                                                        background: "#fff",
+                                                        color: "#222",
+                                                        border: "1px solid #e5e7eb",
+                                                        borderRadius: 8,
+                                                        padding: "8px 12px",
+                                                        fontSize: 13,
+                                                        boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+                                                        whiteSpace: "pre-line",
+                                                        pointerEvents: "none",
+                                                        maxWidth: 260,
+                                                        alignItems: "center",
+                                                        display: "flex",
+                                                        flexDirection: "column",
+                                                        zIndex: 2147483647,
+                                                    }, children: [jsxRuntimeExports.jsxs("div", { style: {
+                                                                display: "flex",
+                                                                alignItems: "center",
+                                                                gap: 8,
+                                                            }, children: [jsxRuntimeExports.jsx("div", { style: {
+                                                                        width: 12,
+                                                                        height: 12,
+                                                                        borderRadius: '100%',
+                                                                        background: barColorHex$1[colorKeys$1[index % colorKeys$1.length]],
+                                                                        border: "1px solid #e5e7eb",
+                                                                        display: "inline-block",
+                                                                    } }), jsxRuntimeExports.jsx("span", { style: { fontSize: 16, fontWeight: 500, color: "#666" }, children: labels[index] })] }), jsxRuntimeExports.jsxs("div", { children: [figures[index], " ", unit !== null && unit !== void 0 ? unit : "개"] })] }), document.body)] }, index)); }), jsxRuntimeExports.jsx("div", { className: bottomAxis$2 })] }), jsxRuntimeExports.jsx("div", { className: barLabels$2, children: labels.map(function (label, i) { return (jsxRuntimeExports.jsx("span", { className: barLabelItem$2, style: { width: "".concat(100 / labels.length, "%") }, children: label }, i)); }) })] })] }), jsxRuntimeExports.jsx("div", { className: chartNote$2, children: "\uAC12\uC740 \uCD5C\uB300\uAC12\uC5D0 \uBE44\uB840\uD558\uC5EC \uD45C\uC2DC\uB429\uB2C8\uB2E4." })] }));
 }
 
-export { Button, Chart };
+var barColorVariants = {color1:'MultiBarChart_barColorVariants_color1__cfnqj79',color2:'MultiBarChart_barColorVariants_color2__cfnqj7a',color3:'MultiBarChart_barColorVariants_color3__cfnqj7b',color4:'MultiBarChart_barColorVariants_color4__cfnqj7c',color5:'MultiBarChart_barColorVariants_color5__cfnqj7d',color6:'MultiBarChart_barColorVariants_color6__cfnqj7e',color7:'MultiBarChart_barColorVariants_color7__cfnqj7f',color8:'MultiBarChart_barColorVariants_color8__cfnqj7g',color9:'MultiBarChart_barColorVariants_color9__cfnqj7h',color10:'MultiBarChart_barColorVariants_color10__cfnqj7i'};
+var barContainer = 'MultiBarChart_barContainer__cfnqj77';
+var barLabel = 'MultiBarChart_barLabel__cfnqj78';
+var barLabelItem$1 = 'MultiBarChart_barLabelItem__cfnqj7l';
+var barLabels$1 = 'MultiBarChart_barLabels__cfnqj7k';
+var bottomAxis$1 = 'MultiBarChart_bottomAxis__cfnqj7j';
+var chartBars$1 = 'MultiBarChart_chartBars__cfnqj75';
+var chartContainer$1 = 'MultiBarChart_chartContainer__cfnqj71';
+var chartContent$1 = 'MultiBarChart_chartContent__cfnqj74';
+var chartNote$1 = 'MultiBarChart_chartNote__cfnqj7m';
+var content$1 = 'MultiBarChart_content__cfnqj70';
+var gridLine$1 = 'MultiBarChart_gridLine__cfnqj76';
+var yAxis$1 = 'MultiBarChart_yAxis__cfnqj72';
+var yAxisTick$1 = 'MultiBarChart_yAxisTick__cfnqj73';
+
+var barColorHex = {
+    color1: "#f43f5e",
+    color2: "#38bdf8",
+    color3: "#34d399",
+    color4: "#a78bfa",
+    color5: "#facc15",
+    color6: "#fb923c",
+    color7: "#818cf8",
+    color8: "#f472b6",
+    color9: "#4ade80",
+    color10: "#f87171",
+};
+
+var colorKeys = [
+    "color1",
+    "color2",
+    "color3",
+    "color4",
+    "color5",
+    "color6",
+    "color7",
+    "color8",
+    "color9",
+    "color10",
+];
+function MultiBarChart(_a) {
+    var data = _a.data, seriesLabels = _a.seriesLabels, _b = _a.height, height = _b === void 0 ? 300 : _b, hover = _a.hover, unit = _a.unit;
+    var _c = useState(null), hoveredGroupIdx = _c[0], setHoveredGroupIdx = _c[1];
+    var _d = useState(null), mousePos = _d[0], setMousePos = _d[1];
+    var allValues = data.flatMap(function (d) { return d.values; });
+    var maxBarValue = Math.max.apply(Math, __spreadArray(__spreadArray([], allValues, false), [1], false));
+    var bottomFixedHeight = 100;
+    var totalChartContainerHeight = height;
+    var chartBarsAndAxisHeight = totalChartContainerHeight - bottomFixedHeight;
+    var numberOfTicks = 5;
+    var yAxisTicks = Array.from({ length: numberOfTicks }, function (_, i) {
+        var value = (maxBarValue / (numberOfTicks - 1)) * (numberOfTicks - 1 - i);
+        return Math.round(value);
+    });
+    return (jsxRuntimeExports.jsxs("div", { className: content$1, style: { height: height }, children: [jsxRuntimeExports.jsxs("div", { className: chartContainer$1, children: [jsxRuntimeExports.jsx("div", { className: yAxis$1, children: yAxisTicks.map(function (tick, i) { return (jsxRuntimeExports.jsx("div", { className: yAxisTick$1, children: jsxRuntimeExports.jsx("span", { children: tick }) }, i)); }) }), jsxRuntimeExports.jsxs("div", { className: chartContent$1, children: [jsxRuntimeExports.jsxs("div", { className: chartBars$1, children: [yAxisTicks.map(function (tick, i) { return (jsxRuntimeExports.jsx("div", { className: gridLine$1, style: { bottom: "".concat((i / (yAxisTicks.length - 1)) * 100, "%") } }, "grid-line-".concat(i))); }), data.map(function (group, groupIdx) { return (jsxRuntimeExports.jsx("div", { style: {
+                                            display: "flex",
+                                            flexDirection: "column",
+                                            alignItems: "center",
+                                            flex: 1,
+                                            cursor: hover ? "pointer" : undefined,
+                                            background: hover && hoveredGroupIdx === groupIdx ? "rgba(0,0,0,0.03)" : undefined,
+                                            borderRadius: 12,
+                                            transition: "background 0.15s",
+                                            padding: "0 2px"
+                                        }, onMouseEnter: function (e) {
+                                            setHoveredGroupIdx(groupIdx);
+                                            setMousePos({ x: e.clientX, y: e.clientY });
+                                        }, onMouseMove: function (e) { return setMousePos({ x: e.clientX, y: e.clientY }); }, onMouseLeave: function () {
+                                            setHoveredGroupIdx(null);
+                                            setMousePos(null);
+                                        }, children: jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "flex-end", height: "100%", gap: 2 }, children: [group.values.map(function (value, barIdx) { return (jsxRuntimeExports.jsxs("div", { className: barContainer, style: {
+                                                        position: "relative",
+                                                        margin: 0,
+                                                        padding: 0,
+                                                        background: "none"
+                                                    }, children: [!hover && (jsxRuntimeExports.jsx("span", { className: barLabel, children: value })), jsxRuntimeExports.jsx("div", { className: barColorVariants[colorKeys[barIdx % colorKeys.length]], style: {
+                                                                height: "".concat((value / maxBarValue) * chartBarsAndAxisHeight, "px"),
+                                                                width: 20,
+                                                                minWidth: 6,
+                                                                borderRadius: "8px",
+                                                                transition: "all 0.2s ease-out",
+                                                                margin: 0,
+                                                            } })] }, barIdx)); }), hover && hoveredGroupIdx === groupIdx && mousePos &&
+                                                    createPortal(jsxRuntimeExports.jsxs("div", { style: {
+                                                            position: "fixed",
+                                                            top: mousePos.y + 12,
+                                                            left: mousePos.x + 12,
+                                                            background: "#fff",
+                                                            color: "#222",
+                                                            border: "1px solid #e5e7eb",
+                                                            borderRadius: 8,
+                                                            padding: "8px 12px",
+                                                            fontSize: 13,
+                                                            boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+                                                            whiteSpace: "pre-line",
+                                                            pointerEvents: "none",
+                                                            maxWidth: 260,
+                                                            alignItems: "center",
+                                                            display: "flex",
+                                                            flexDirection: "column",
+                                                            zIndex: 2147483647,
+                                                        }, children: [jsxRuntimeExports.jsx("div", { style: { fontSize: 16, fontWeight: 500, color: "#666", marginBottom: 8 }, children: group.title }), jsxRuntimeExports.jsx("div", { style: { display: "flex", flexDirection: "column", gap: 4 }, children: group.values.map(function (value, barIdx) { return (jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: 8 }, children: [jsxRuntimeExports.jsx("div", { style: {
+                                                                                width: 12,
+                                                                                height: 12,
+                                                                                borderRadius: "100%",
+                                                                                background: barColorHex[colorKeys[barIdx % colorKeys.length]],
+                                                                                border: "1px solid #e5e7eb",
+                                                                                display: "inline-block",
+                                                                            } }), jsxRuntimeExports.jsx("span", { style: { color: "#888" }, children: seriesLabels[barIdx] }), jsxRuntimeExports.jsxs("span", { style: { fontWeight: 500 }, children: [value, " ", unit !== null && unit !== void 0 ? unit : "개"] })] }, barIdx)); }) })] }), document.body)] }) }, groupIdx)); }), jsxRuntimeExports.jsx("div", { className: bottomAxis$1 })] }), jsxRuntimeExports.jsx("div", { className: barLabels$1, children: data.map(function (group, groupIdx) { return (jsxRuntimeExports.jsx("span", { className: barLabelItem$1, style: { width: "".concat(100 / data.length, "%") }, children: group.title }, groupIdx)); }) })] })] }), jsxRuntimeExports.jsx("div", { className: chartNote$1, children: "\uAC12\uC740 \uCD5C\uB300\uAC12\uC5D0 \uBE44\uB840\uD558\uC5EC \uD45C\uC2DC\uB429\uB2C8\uB2E4." })] }));
+}
+
+var barLabelItem = 'SingleLineChart_barLabelItem__b9e04yl';
+var barLabels = 'SingleLineChart_barLabels__b9e04yk';
+var bottomAxis = 'SingleLineChart_bottomAxis__b9e04yj';
+var chartBars = 'SingleLineChart_chartBars__b9e04y5';
+var chartContainer = 'SingleLineChart_chartContainer__b9e04y1';
+var chartContent = 'SingleLineChart_chartContent__b9e04y4';
+var chartNote = 'SingleLineChart_chartNote__b9e04ym';
+var content = 'SingleLineChart_content__b9e04y0';
+var gridLine = 'SingleLineChart_gridLine__b9e04y6';
+var yAxis = 'SingleLineChart_yAxis__b9e04y2';
+var yAxisTick = 'SingleLineChart_yAxisTick__b9e04y3';
+
+function SingleLineChart(_a) {
+    var data = _a.data, _b = _a.height, height = _b === void 0 ? 300 : _b, unit = _a.unit;
+    var values = data.map(function (d) { return d.value; });
+    var labels = data.map(function (d) { return d.title; });
+    var maxValue = Math.max.apply(Math, __spreadArray(__spreadArray([], values, false), [1], false));
+    var bottomFixedHeight = 100;
+    var totalChartContainerHeight = height;
+    var chartBarsAndAxisHeight = totalChartContainerHeight - bottomFixedHeight;
+    var numberOfTicks = 5;
+    var yAxisTicks = Array.from({ length: numberOfTicks }, function (_, i) {
+        var value = (maxValue / (numberOfTicks - 1)) * (numberOfTicks - 1 - i);
+        return Math.round(value);
+    });
+    var canvasRef = useRef(null);
+    var _c = useState(null), hoverIdx = _c[0], setHoverIdx = _c[1];
+    var _d = useState(null), mousePos = _d[0], setMousePos = _d[1];
+    var _e = useState(null); _e[0]; _e[1];
+    var _f = useState(null), startIdx = _f[0], setStartIdx = _f[1];
+    var _g = useState(null), endIdx = _g[0], setEndIdx = _g[1];
+    useEffect(function () {
+        var canvas = canvasRef.current;
+        if (!canvas)
+            return;
+        var dpr = window.devicePixelRatio || 1;
+        var cssWidth = canvas.offsetWidth || 400;
+        var cssHeight = chartBarsAndAxisHeight;
+        canvas.width = cssWidth * dpr;
+        canvas.height = cssHeight * dpr;
+        var ctx = canvas.getContext("2d");
+        if (!ctx)
+            return;
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.scale(dpr, dpr);
+        // 선택된 구간 배경 (startIdx, endIdx)
+        if (startIdx !== null &&
+            endIdx !== null &&
+            startIdx >= 0 &&
+            endIdx >= 0 &&
+            startIdx < values.length &&
+            endIdx < values.length) {
+            var s = Math.min(startIdx, endIdx);
+            var e = Math.max(startIdx, endIdx);
+            // 기본 구간 배경
+            ctx.save();
+            ctx.fillStyle = "rgba(37,99,235,0.08)";
+            ctx.beginPath();
+            for (var i = s; i <= e; i++) {
+                var x = ((i + 0.5) / labels.length) * cssWidth;
+                var y = cssHeight - (values[i] / maxValue) * cssHeight;
+                if (i === s)
+                    ctx.moveTo(x, y);
+                else
+                    ctx.lineTo(x, y);
+            }
+            for (var i = e; i >= s; i--) {
+                var x = ((i + 0.5) / labels.length) * cssWidth;
+                ctx.lineTo(x, cssHeight);
+            }
+            ctx.closePath();
+            ctx.fill();
+            ctx.restore();
+            // hoverIdx가 구간 내에 있으면 진한 색으로 덮어씌움
+            if (hoverIdx !== null && hoverIdx >= s && hoverIdx <= e) {
+                ctx.save();
+                ctx.fillStyle = "rgba(37,99,235,0.18)";
+                ctx.beginPath();
+                for (var i = s; i <= e; i++) {
+                    var x = ((i + 0.5) / labels.length) * cssWidth;
+                    var y = cssHeight - (values[i] / maxValue) * cssHeight;
+                    if (i === s)
+                        ctx.moveTo(x, y);
+                    else
+                        ctx.lineTo(x, y);
+                }
+                for (var i = e; i >= s; i--) {
+                    var x = ((i + 0.5) / labels.length) * cssWidth;
+                    ctx.lineTo(x, cssHeight);
+                }
+                ctx.closePath();
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+        else if (startIdx !== null &&
+            endIdx === null &&
+            hoverIdx !== null &&
+            startIdx >= 0 &&
+            hoverIdx >= 0 &&
+            startIdx < values.length &&
+            hoverIdx < values.length) {
+            var s = Math.min(startIdx, hoverIdx);
+            var e = Math.max(startIdx, hoverIdx);
+            ctx.save();
+            ctx.fillStyle = "rgba(37,99,235,0.08)";
+            ctx.beginPath();
+            for (var i = s; i <= e; i++) {
+                var x = ((i + 0.5) / labels.length) * cssWidth;
+                var y = cssHeight - (values[i] / maxValue) * cssHeight;
+                if (i === s)
+                    ctx.moveTo(x, y);
+                else
+                    ctx.lineTo(x, y);
+            }
+            for (var i = e; i >= s; i--) {
+                var x = ((i + 0.5) / labels.length) * cssWidth;
+                ctx.lineTo(x, cssHeight);
+            }
+            ctx.closePath();
+            ctx.fill();
+            ctx.restore();
+        }
+        ctx.save();
+        ctx.strokeStyle = "#2563eb";
+        ctx.lineWidth = 2;
+        ctx.lineCap = "round";
+        ctx.beginPath();
+        values.forEach(function (v, i) {
+            var x = ((i + 0.5) / labels.length) * cssWidth;
+            var y = cssHeight - (v / maxValue) * cssHeight;
+            if (i === 0)
+                ctx.moveTo(x, y);
+            else
+                ctx.lineTo(x, y);
+        });
+        ctx.stroke();
+        ctx.restore();
+        ctx.save();
+        ctx.fillStyle = "#2563eb";
+        values.forEach(function (v, i) {
+            var x = ((i + 0.5) / labels.length) * cssWidth;
+            var y = cssHeight - (v / maxValue) * cssHeight;
+            ctx.beginPath();
+            ctx.arc(x, y, 1, 0, 2 * Math.PI);
+            ctx.fill();
+        });
+        ctx.restore();
+        // 1. 아무것도 클릭되지 않았을 때: hoverIdx가 있으면 해당 구간만 회색
+        if (startIdx === null && endIdx === null && hoverIdx !== null && hoverIdx >= 0 && hoverIdx < values.length) {
+            ctx.save();
+            ctx.fillStyle = "rgba(180,180,180,0.18)";
+            ctx.beginPath();
+            // 곡선 위쪽: hoverIdx만
+            var x = ((hoverIdx + 0.5) / labels.length) * cssWidth;
+            var y = cssHeight - (values[hoverIdx] / maxValue) * cssHeight;
+            ctx.moveTo(x, y);
+            ctx.lineTo(x, cssHeight);
+            ctx.lineTo(x, cssHeight);
+            ctx.closePath();
+            ctx.arc(x, y, 12, Math.PI, 0, true);
+            ctx.fill();
+            ctx.restore();
+        }
+        // 2. 두 인덱스가 모두 차있을 때: hoverIdx가 있으면 해당 구간만 회색
+        else if (startIdx !== null && endIdx !== null && hoverIdx !== null && hoverIdx >= 0 && hoverIdx < values.length) {
+            // 기존 선택 구간 배경
+            var s = Math.min(startIdx, endIdx);
+            var e = Math.max(startIdx, endIdx);
+            ctx.save();
+            ctx.fillStyle = "rgba(37,99,235,0.08)";
+            ctx.beginPath();
+            for (var i = s; i <= e; i++) {
+                var x_1 = ((i + 0.5) / labels.length) * cssWidth;
+                var y_1 = cssHeight - (values[i] / maxValue) * cssHeight;
+                if (i === s)
+                    ctx.moveTo(x_1, y_1);
+                else
+                    ctx.lineTo(x_1, y_1);
+            }
+            for (var i = e; i >= s; i--) {
+                var x_2 = ((i + 0.5) / labels.length) * cssWidth;
+                ctx.lineTo(x_2, cssHeight);
+            }
+            ctx.closePath();
+            ctx.fill();
+            ctx.restore();
+            // hoverIdx가 있으면 해당 구간만 회색으로 덮어씌움
+            ctx.save();
+            ctx.fillStyle = "rgba(180,180,180,0.18)";
+            ctx.beginPath();
+            var x = ((hoverIdx + 0.5) / labels.length) * cssWidth;
+            var y = cssHeight - (values[hoverIdx] / maxValue) * cssHeight;
+            ctx.moveTo(x, y);
+            ctx.lineTo(x, cssHeight);
+            ctx.lineTo(x, cssHeight);
+            ctx.closePath();
+            ctx.arc(x, y, 12, Math.PI, 0, true);
+            ctx.fill();
+            ctx.restore();
+        }
+        // 3. 구간 드래그 중일 때(기존 로직)
+        else if (startIdx !== null && endIdx === null && hoverIdx !== null &&
+            startIdx >= 0 && hoverIdx >= 0 &&
+            startIdx < values.length && hoverIdx < values.length) {
+            var s = Math.min(startIdx, hoverIdx);
+            var e = Math.max(startIdx, hoverIdx);
+            ctx.save();
+            ctx.fillStyle = "rgba(37,99,235,0.08)";
+            ctx.beginPath();
+            for (var i = s; i <= e; i++) {
+                var x = ((i + 0.5) / labels.length) * cssWidth;
+                var y = cssHeight - (values[i] / maxValue) * cssHeight;
+                if (i === s)
+                    ctx.moveTo(x, y);
+                else
+                    ctx.lineTo(x, y);
+            }
+            for (var i = e; i >= s; i--) {
+                var x = ((i + 0.5) / labels.length) * cssWidth;
+                ctx.lineTo(x, cssHeight);
+            }
+            ctx.closePath();
+            ctx.fill();
+            ctx.restore();
+        }
+    }, [values, labels, maxValue, height, chartBarsAndAxisHeight, hoverIdx, startIdx, endIdx]);
+    // 마우스 호버 핸들러
+    function handleMouseMove(e) {
+        var rect = e.currentTarget.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var width = rect.width;
+        var idx = Math.floor((x / width) * labels.length);
+        setHoverIdx(idx);
+        setMousePos({ x: e.clientX, y: e.clientY });
+    }
+    function handleMouseLeave() {
+        setHoverIdx(null);
+        setMousePos(null);
+    }
+    function handleClick(e) {
+        var rect = e.currentTarget.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var width = rect.width;
+        var idx = Math.floor((x / width) * labels.length);
+        if (startIdx === null || (startIdx !== null && endIdx !== null)) {
+            setStartIdx(idx);
+            setEndIdx(null);
+        }
+        else if (startIdx !== null && endIdx === null) {
+            setEndIdx(idx);
+        }
+    }
+    return (jsxRuntimeExports.jsxs("div", { className: content, style: { height: height }, children: [jsxRuntimeExports.jsxs("div", { className: chartContainer, children: [jsxRuntimeExports.jsx("div", { className: yAxis, children: yAxisTicks.map(function (tick, i) { return (jsxRuntimeExports.jsx("div", { className: yAxisTick, children: jsxRuntimeExports.jsx("span", { children: tick }) }, i)); }) }), jsxRuntimeExports.jsxs("div", { className: chartContent, children: [jsxRuntimeExports.jsxs("div", { className: chartBars, style: { position: "relative" }, children: [yAxisTicks.map(function (tick, i) { return (jsxRuntimeExports.jsx("div", { className: gridLine, style: { bottom: "".concat((i / (yAxisTicks.length - 1)) * 100, "%") } }, "grid-line-".concat(i))); }), jsxRuntimeExports.jsx("canvas", { ref: canvasRef, width: 400, height: chartBarsAndAxisHeight, style: {
+                                            width: "100%",
+                                            height: chartBarsAndAxisHeight,
+                                            position: "absolute",
+                                            left: 0,
+                                            bottom: 0,
+                                            pointerEvents: "auto",
+                                            zIndex: 1,
+                                        }, onMouseMove: handleMouseMove, onMouseLeave: handleMouseLeave, onClick: handleClick }), (hoverIdx !== null && mousePos && startIdx !== null && endIdx !== null && hoverIdx >= Math.min(startIdx, endIdx) && hoverIdx <= Math.max(startIdx, endIdx)) && (jsxRuntimeExports.jsxs("div", { style: {
+                                            position: "fixed",
+                                            top: mousePos.y + 12,
+                                            left: mousePos.x + 12,
+                                            background: "#fff",
+                                            color: "#222",
+                                            border: "1px solid #e5e7eb",
+                                            borderRadius: 8,
+                                            padding: "8px 12px",
+                                            fontSize: 13,
+                                            boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+                                            whiteSpace: "pre-line",
+                                            pointerEvents: "none",
+                                            maxWidth: 260,
+                                            alignItems: "center",
+                                            display: "flex",
+                                            flexDirection: "column",
+                                            zIndex: 2147483647,
+                                        }, children: [jsxRuntimeExports.jsx("div", { style: {
+                                                    fontSize: 16,
+                                                    fontWeight: 500,
+                                                    color: "#666",
+                                                    marginBottom: 8,
+                                                }, children: labels[hoverIdx] }), jsxRuntimeExports.jsxs("div", { style: { fontWeight: 500 }, children: [values[hoverIdx], " ", unit !== null && unit !== void 0 ? unit : ""] }), jsxRuntimeExports.jsxs("div", { style: { marginTop: 4, fontSize: 12, color: "#666" }, children: ["\uD569\uACC4: ", values.slice(Math.min(startIdx, endIdx), Math.max(startIdx, endIdx) + 1).reduce(function (a, b) { return a + b; }, 0), " ", unit !== null && unit !== void 0 ? unit : "", jsxRuntimeExports.jsx("br", {}), "\uD3C9\uADE0: ", (values.slice(Math.min(startIdx, endIdx), Math.max(startIdx, endIdx) + 1).reduce(function (a, b) { return a + b; }, 0) /
+                                                        (Math.abs(endIdx - startIdx) + 1)).toFixed(2), " ", unit !== null && unit !== void 0 ? unit : ""] })] })), jsxRuntimeExports.jsx("div", { className: bottomAxis })] }), jsxRuntimeExports.jsx("div", { className: barLabels, children: labels.map(function (label, i) { return (jsxRuntimeExports.jsx("span", { className: barLabelItem, style: { width: "".concat(100 / labels.length, "%") }, children: label }, i)); }) })] })] }), jsxRuntimeExports.jsx("div", { className: chartNote, children: "\uAC12\uC740 \uCD5C\uB300\uAC12\uC5D0 \uBE44\uB840\uD558\uC5EC \uD45C\uC2DC\uB429\uB2C8\uB2E4." })] }));
+}
+
+export { BarChart as Chart, MultiBarChart, SingleLineChart };
 //# sourceMappingURL=index.mjs.map
